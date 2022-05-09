@@ -1,0 +1,46 @@
+Class A =   0 - 127 (0XXXXXXX)
+Class B = 128 - 191 (10XXXXXX)
+class C = 192 - 223 (110XXXXX)
+Class D = 224 - 239 (1110XXXX)
+Class E = 240 - 255 (11110XXX)
+
+
+1) have to set a username and password
+2) have to set hostname
+3) have to set domain name
+4) generate crypto key
+
+in line VTY 0 15
+5) set transport to use ssh
+6) set login to use local database
+
+optional
+set timeout
+	ip ssh time-out 120
+set max attempts
+	ip ssh authentication-retries 
+set console/VTY to log synchronous
+
+
+service password-encryption
+username tom secret password
+username jane secret password
+ip domain-name test.com
+no ip domain-lookup
+crypto key generate rsa general-key modulus 2048
+ip ssh version 2
+line con 0
+logging sync
+line vty 0 15
+login local
+logging sync
+transport input ssh
+
+! optional
+ip ssh authentication-retries 3
+ip ssh time-out 120
+
+
+
+
+
