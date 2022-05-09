@@ -15,11 +15,11 @@ in line VTY 0 15
 6) set login to use local database
 
 optional
-set timeout
+7) set timeout
 	ip ssh time-out 120
-set max attempts
+8)set max attempts
 	ip ssh authentication-retries 
-set console/VTY to log synchronous
+9)set console/VTY to log synchronous
 
 
 !!!! COMMANDS START HERE
