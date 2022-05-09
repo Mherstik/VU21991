@@ -22,6 +22,9 @@ set max attempts
 set console/VTY to log synchronous
 
 
+!!!! COMMANDS START HERE
+
+
 service password-encryption
 username tom secret password
 username jane secret password
